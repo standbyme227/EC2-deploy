@@ -52,7 +52,10 @@ SECRET_KEY = secrets_base['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.amazonaws.com',
+    'localhost'
+]
 
 
 # Application definition
@@ -65,7 +68,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'photos'
+    'photos',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
