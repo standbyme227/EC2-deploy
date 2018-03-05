@@ -16,7 +16,21 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 
-SECRETS_DIR = os.path.join(ROOT_DIR, '.secret')
+#Static
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
+# Media (User-uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
+
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_FILES_DIRS = [
+    STATIC_DIR,
+]
+
+#Secret
+SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 SECRETS_BASE = os.path.join(SECRETS_DIR,'base.json')
 
 
@@ -50,6 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'photos'
 ]
 
 MIDDLEWARE = [
@@ -130,4 +146,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
