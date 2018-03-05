@@ -23,5 +23,10 @@ from config.views import serve_media
 urlpatterns = [
     path('admin/', admin.site.urls),
     # re_path(r'media/(?P<path>.*)$', serve_media),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT
+)
 # static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
